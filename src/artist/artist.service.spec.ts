@@ -55,7 +55,8 @@ describe('ArtistService', () => {
   });
 
   it('should return a single artist by id', async () => {
-    expect(service.findOne(artistId)).resolves.toEqual(artist);
+    const result = await service.findOne(artistId);
+    expect(result).toEqual(artist);
   });
 
   it('should create a new Artist', async () => {

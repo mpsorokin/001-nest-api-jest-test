@@ -27,5 +27,7 @@ export class ArtistService {
     if (!artist) {
       throw new NotFoundException(`Artist with id ${id} not found`);
     }
+
+    return artist;
   }
 }
