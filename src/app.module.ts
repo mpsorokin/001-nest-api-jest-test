@@ -4,6 +4,7 @@ import { AppService } from './app.service';
 import { ConfigModule } from '@nestjs/config';
 import { PrismaModule } from './prisma/prisma.module';
 import { ArtistModule } from './artist/artist.module';
+import { SpotifyModule } from './spotify/spotify.module';
 
 @Module({
   imports: [
@@ -12,6 +13,7 @@ import { ArtistModule } from './artist/artist.module';
     }),
     PrismaModule,
     ArtistModule,
+    SpotifyModule,
   ],
   controllers: [AppController],
   providers: [AppService],
