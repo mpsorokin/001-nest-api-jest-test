@@ -5,7 +5,6 @@ import { Artist } from '../../generated/prisma';
 import { ArtistDto } from './dto/artist.dto';
 import { ArtistService } from './artist.service';
 import { PrismaService } from '../prisma/prisma.service';
-import { ArtistController } from './artist.controller';
 
 const artistId = uuidv4();
 
@@ -53,5 +52,15 @@ describe('ArtistService', () => {
   it('should return an array of artists', async () => {
     const result = await service.findAll();
     expect(result).toEqual(artists);
+  });
+
+  it('should return a single artist by id', async () => {
+    const result = await service.findOne(artistId);
+    await expect(result).resolves.toEqual(artist);
+  });
+
+  it('should create a new Artist', async () => {
+    const result = await service.create(dto);
+    expect(result).toEqual(artist);
   });
 });

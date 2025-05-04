@@ -123,9 +123,7 @@ exports.Prisma.TransactionIsolationLevel = makeStrictEnum({
 exports.Prisma.ArtistScalarFieldEnum = {
   id: 'id',
   name: 'name',
-  genre: 'genre',
-  createdAt: 'createdAt',
-  updatedAt: 'updatedAt'
+  genre: 'genre'
 };
 
 exports.Prisma.SortOrder = {

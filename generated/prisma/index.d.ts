@@ -883,24 +883,18 @@ export namespace Prisma {
     id: string | null
     name: string | null
     genre: string | null
-    createdAt: Date | null
-    updatedAt: Date | null
   }
 
   export type ArtistMaxAggregateOutputType = {
     id: string | null
     name: string | null
     genre: string | null
-    createdAt: Date | null
-    updatedAt: Date | null
   }
 
   export type ArtistCountAggregateOutputType = {
     id: number
     name: number
     genre: number
-    createdAt: number
-    updatedAt: number
     _all: number
   }
 
@@ -909,24 +903,18 @@ export namespace Prisma {
     id?: true
     name?: true
     genre?: true
-    createdAt?: true
-    updatedAt?: true
   }
 
   export type ArtistMaxAggregateInputType = {
     id?: true
     name?: true
     genre?: true
-    createdAt?: true
-    updatedAt?: true
   }
 
   export type ArtistCountAggregateInputType = {
     id?: true
     name?: true
     genre?: true
-    createdAt?: true
-    updatedAt?: true
     _all?: true
   }
 
@@ -1006,8 +994,6 @@ export namespace Prisma {
     id: string
     name: string
     genre: string
-    createdAt: Date
-    updatedAt: Date
     _count: ArtistCountAggregateOutputType | null
     _min: ArtistMinAggregateOutputType | null
     _max: ArtistMaxAggregateOutputType | null
@@ -1031,35 +1017,27 @@ export namespace Prisma {
     id?: boolean
     name?: boolean
     genre?: boolean
-    createdAt?: boolean
-    updatedAt?: boolean
   }, ExtArgs["result"]["artist"]>
 
   export type ArtistSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     name?: boolean
     genre?: boolean
-    createdAt?: boolean
-    updatedAt?: boolean
   }, ExtArgs["result"]["artist"]>
 
   export type ArtistSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     name?: boolean
     genre?: boolean
-    createdAt?: boolean
-    updatedAt?: boolean
   }, ExtArgs["result"]["artist"]>
 
   export type ArtistSelectScalar = {
     id?: boolean
     name?: boolean
     genre?: boolean
-    createdAt?: boolean
-    updatedAt?: boolean
   }
 
-  export type ArtistOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "genre" | "createdAt" | "updatedAt", ExtArgs["result"]["artist"]>
+  export type ArtistOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "genre", ExtArgs["result"]["artist"]>
 
   export type $ArtistPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "Artist"
@@ -1068,8 +1046,6 @@ export namespace Prisma {
       id: string
       name: string
       genre: string
-      createdAt: Date
-      updatedAt: Date
     }, ExtArgs["result"]["artist"]>
     composites: {}
   }
@@ -1496,8 +1472,6 @@ export namespace Prisma {
     readonly id: FieldRef<"Artist", 'String'>
     readonly name: FieldRef<"Artist", 'String'>
     readonly genre: FieldRef<"Artist", 'String'>
-    readonly createdAt: FieldRef<"Artist", 'DateTime'>
-    readonly updatedAt: FieldRef<"Artist", 'DateTime'>
   }
     
 
@@ -1881,9 +1855,7 @@ export namespace Prisma {
   export const ArtistScalarFieldEnum: {
     id: 'id',
     name: 'name',
-    genre: 'genre',
-    createdAt: 'createdAt',
-    updatedAt: 'updatedAt'
+    genre: 'genre'
   };
 
   export type ArtistScalarFieldEnum = (typeof ArtistScalarFieldEnum)[keyof typeof ArtistScalarFieldEnum]
@@ -1925,20 +1897,6 @@ export namespace Prisma {
 
 
   /**
-   * Reference to a field of type 'DateTime'
-   */
-  export type DateTimeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'DateTime'>
-    
-
-
-  /**
-   * Reference to a field of type 'DateTime[]'
-   */
-  export type ListDateTimeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'DateTime[]'>
-    
-
-
-  /**
    * Reference to a field of type 'Int'
    */
   export type IntFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Int'>
@@ -1962,16 +1920,12 @@ export namespace Prisma {
     id?: StringFilter<"Artist"> | string
     name?: StringFilter<"Artist"> | string
     genre?: StringFilter<"Artist"> | string
-    createdAt?: DateTimeFilter<"Artist"> | Date | string
-    updatedAt?: DateTimeFilter<"Artist"> | Date | string
   }
 
   export type ArtistOrderByWithRelationInput = {
     id?: SortOrder
     name?: SortOrder
     genre?: SortOrder
-    createdAt?: SortOrder
-    updatedAt?: SortOrder
   }
 
   export type ArtistWhereUniqueInput = Prisma.AtLeast<{
@@ -1981,16 +1935,12 @@ export namespace Prisma {
     NOT?: ArtistWhereInput | ArtistWhereInput[]
     name?: StringFilter<"Artist"> | string
     genre?: StringFilter<"Artist"> | string
-    createdAt?: DateTimeFilter<"Artist"> | Date | string
-    updatedAt?: DateTimeFilter<"Artist"> | Date | string
   }, "id">
 
   export type ArtistOrderByWithAggregationInput = {
     id?: SortOrder
     name?: SortOrder
     genre?: SortOrder
-    createdAt?: SortOrder
-    updatedAt?: SortOrder
     _count?: ArtistCountOrderByAggregateInput
     _max?: ArtistMaxOrderByAggregateInput
     _min?: ArtistMinOrderByAggregateInput
@@ -2003,64 +1953,48 @@ export namespace Prisma {
     id?: StringWithAggregatesFilter<"Artist"> | string
     name?: StringWithAggregatesFilter<"Artist"> | string
     genre?: StringWithAggregatesFilter<"Artist"> | string
-    createdAt?: DateTimeWithAggregatesFilter<"Artist"> | Date | string
-    updatedAt?: DateTimeWithAggregatesFilter<"Artist"> | Date | string
   }
 
   export type ArtistCreateInput = {
     id?: string
     name: string
     genre: string
-    createdAt?: Date | string
-    updatedAt?: Date | string
   }
 
   export type ArtistUncheckedCreateInput = {
     id?: string
     name: string
     genre: string
-    createdAt?: Date | string
-    updatedAt?: Date | string
   }
 
   export type ArtistUpdateInput = {
     id?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
     genre?: StringFieldUpdateOperationsInput | string
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type ArtistUncheckedUpdateInput = {
     id?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
     genre?: StringFieldUpdateOperationsInput | string
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type ArtistCreateManyInput = {
     id?: string
     name: string
     genre: string
-    createdAt?: Date | string
-    updatedAt?: Date | string
   }
 
   export type ArtistUpdateManyMutationInput = {
     id?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
     genre?: StringFieldUpdateOperationsInput | string
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type ArtistUncheckedUpdateManyInput = {
     id?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
     genre?: StringFieldUpdateOperationsInput | string
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type StringFilter<$PrismaModel = never> = {
@@ -2078,39 +2012,22 @@ export namespace Prisma {
     not?: NestedStringFilter<$PrismaModel> | string
   }
 
-  export type DateTimeFilter<$PrismaModel = never> = {
-    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
-    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
-    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    not?: NestedDateTimeFilter<$PrismaModel> | Date | string
-  }
-
   export type ArtistCountOrderByAggregateInput = {
     id?: SortOrder
     name?: SortOrder
     genre?: SortOrder
-    createdAt?: SortOrder
-    updatedAt?: SortOrder
   }
 
   export type ArtistMaxOrderByAggregateInput = {
     id?: SortOrder
     name?: SortOrder
     genre?: SortOrder
-    createdAt?: SortOrder
-    updatedAt?: SortOrder
   }
 
   export type ArtistMinOrderByAggregateInput = {
     id?: SortOrder
     name?: SortOrder
     genre?: SortOrder
-    createdAt?: SortOrder
-    updatedAt?: SortOrder
   }
 
   export type StringWithAggregatesFilter<$PrismaModel = never> = {
@@ -2131,26 +2048,8 @@ export namespace Prisma {
     _max?: NestedStringFilter<$PrismaModel>
   }
 
-  export type DateTimeWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
-    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
-    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    not?: NestedDateTimeWithAggregatesFilter<$PrismaModel> | Date | string
-    _count?: NestedIntFilter<$PrismaModel>
-    _min?: NestedDateTimeFilter<$PrismaModel>
-    _max?: NestedDateTimeFilter<$PrismaModel>
-  }
-
   export type StringFieldUpdateOperationsInput = {
     set?: string
-  }
-
-  export type DateTimeFieldUpdateOperationsInput = {
-    set?: Date | string
   }
 
   export type NestedStringFilter<$PrismaModel = never> = {
@@ -2165,17 +2064,6 @@ export namespace Prisma {
     startsWith?: string | StringFieldRefInput<$PrismaModel>
     endsWith?: string | StringFieldRefInput<$PrismaModel>
     not?: NestedStringFilter<$PrismaModel> | string
-  }
-
-  export type NestedDateTimeFilter<$PrismaModel = never> = {
-    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
-    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
-    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    not?: NestedDateTimeFilter<$PrismaModel> | Date | string
   }
 
   export type NestedStringWithAggregatesFilter<$PrismaModel = never> = {
@@ -2204,20 +2092,6 @@ export namespace Prisma {
     gt?: number | IntFieldRefInput<$PrismaModel>
     gte?: number | IntFieldRefInput<$PrismaModel>
     not?: NestedIntFilter<$PrismaModel> | number
-  }
-
-  export type NestedDateTimeWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
-    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
-    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    not?: NestedDateTimeWithAggregatesFilter<$PrismaModel> | Date | string
-    _count?: NestedIntFilter<$PrismaModel>
-    _min?: NestedDateTimeFilter<$PrismaModel>
-    _max?: NestedDateTimeFilter<$PrismaModel>
   }
 
 
