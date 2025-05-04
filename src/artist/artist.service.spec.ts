@@ -20,9 +20,9 @@ const dto: ArtistDto = { name: artist.name, genre: artist.genre };
 
 const db = {
   artist: {
-    findMany: () => jest.fn().mockResolvedValue(artists),
-    findUnique: () => jest.fn().mockResolvedValue(artist),
-    create: () => jest.fn().mockResolvedValue(artist),
+    findMany: jest.fn().mockResolvedValue(artists),
+    findUnique: jest.fn().mockResolvedValue(artist),
+    create: jest.fn().mockResolvedValue(artist),
   },
 };
 
