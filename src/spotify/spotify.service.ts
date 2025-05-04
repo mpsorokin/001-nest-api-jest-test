@@ -31,7 +31,7 @@ export class SpotifyService {
         `https://api.spotify.com/v1/artists/${id}`,
         {
           headers: {
-            Authorization: `Bearer: ${this.accessToken}`,
+            Authorization: `Bearer ${this.accessToken}`,
             'Content-Type': 'application/x-www-form-urlencoded',
           },
         },
