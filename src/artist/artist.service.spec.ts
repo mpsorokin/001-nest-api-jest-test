@@ -41,8 +41,8 @@ describe('ArtistService', () => {
       ],
     }).compile();
 
-    prisma = module.get<PrismaService>(PrismaService);
     service = module.get<ArtistService>(ArtistService);
+    prisma = module.get<PrismaService>(PrismaService);
   });
 
   it('should be defined', () => {
@@ -55,12 +55,10 @@ describe('ArtistService', () => {
   });
 
   it('should return a single artist by id', async () => {
-    const result = await service.findOne(artistId);
-    await expect(result).resolves.toEqual(artist);
+    expect(service.findOne(artistId)).resolves.toEqual(artist);
   });
 
   it('should create a new Artist', async () => {
-    const result = await service.create(dto);
-    expect(result).toEqual(artist);
+    expect(service.create(dto)).resolves.toEqual(artist);
   });
 });
