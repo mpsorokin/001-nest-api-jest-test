@@ -53,7 +53,8 @@ describe('ArtistController (e2e)', () => {
       .send(dto)
       .expect(201);
 
-    const artistId = created.body.id;
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment,@typescript-eslint/no-unsafe-member-access
+    const artistId: string = created.body.id;
 
     const response = await request(app.getHttpServer())
       .get(`/artists/${artistId}`)
