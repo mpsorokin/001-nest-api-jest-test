@@ -26,7 +26,7 @@ async function bootstrap() {
   SwaggerModule.setup('swagger', app, document);
 
   app.enableCors({
-    origin: configService.getOrThrow<string>('ALLOWED_ORIGINS'),
+    origin: configService.getOrThrow<string[]>('ALLOWED_ORIGINS'),
   });
 
   await app.listen(process.env.PORT ?? 3070);
