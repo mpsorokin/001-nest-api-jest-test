@@ -26,7 +26,10 @@ async function bootstrap() {
   SwaggerModule.setup('swagger', app, document);
 
   app.enableCors({
-    origin: configService.getOrThrow<string[]>('ALLOWED_ORIGINS'),
+    origin: configService.getOrThrow<string>('ALLOWED_ORIGINS').split(','),
+    credentials: true,
+    exposedHeaders: ['Set-Cookie', 'Content-Disposition'],
+    allowedHeaders: '*',
   });
 
   await app.listen(process.env.PORT ?? 3070);
