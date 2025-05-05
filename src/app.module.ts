@@ -24,7 +24,7 @@ import * as path from 'path';
     }),
     ServeStaticModule.forRoot({
       rootPath: path.join(__dirname, '..', 'uploads'),
-      serveRoot: 'static',
+      serveRoot: '/static', //http://localhost:3070/static/nest.jpg
     }),
     FileModule,
   ],
