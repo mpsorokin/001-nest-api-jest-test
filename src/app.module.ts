@@ -13,7 +13,10 @@ import { SpotifyModule } from './spotify/spotify.module';
     }),
     PrismaModule,
     ArtistModule,
-    SpotifyModule,
+    SpotifyModule.forRoot({
+      clientId: '',
+      clientSecret: '',
+    }),
   ],
   controllers: [AppController],
   providers: [AppService],

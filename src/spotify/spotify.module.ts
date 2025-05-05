@@ -18,6 +18,7 @@ export class SpotifyModule {
           provide: SpotifyOptionsSymbol,
           useValue: options,
         },
+        SpotifyService,
       ],
       exports: [SpotifyService],
       global: true,
@@ -31,8 +32,10 @@ export class SpotifyModule {
       providers: [
         {
           provide: SpotifyOptionsSymbol,
-          useValue: options,
+          useFactory: options.useFactory,
+          inject: options.inject ?? [],
         },
+        SpotifyService,
       ],
       exports: [SpotifyService],
       global: true,
