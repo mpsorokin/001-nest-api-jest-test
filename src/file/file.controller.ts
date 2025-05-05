@@ -1,6 +1,7 @@
 import {
   Controller,
   FileTypeValidator,
+  MaxFileSizeValidator,
   ParseFilePipe,
   Post,
   UploadedFile,
@@ -21,6 +22,10 @@ export class FileController {
         validators: [
           new FileTypeValidator({
             fileType: /\/(jpg|jpeg|png|webp|gif)$/,
+          }),
+          new MaxFileSizeValidator({
+            maxSize: 1000 * 1000 * 10, // 10MB
+            message: 'Max image size is too large (10MB max)',
           }),
         ],
       }),
