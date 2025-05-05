@@ -8,6 +8,7 @@ import { SpotifyModule } from './spotify/spotify.module';
 import { getSpotifyConfig } from './config/spotify.config';
 import { FileModule } from './file/file.module';
 import { ServeStaticModule } from '@nestjs/serve-static';
+import { CronTaskModule } from './cron-task/cron-task.module';
 import * as path from 'path';
 
 @Module({
@@ -27,6 +28,7 @@ import * as path from 'path';
       serveRoot: '/static', //http://localhost:3070/static/nest.jpg
     }),
     FileModule,
+    CronTaskModule,
   ],
   controllers: [AppController],
   providers: [AppService],
