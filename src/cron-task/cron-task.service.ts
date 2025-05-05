@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { Cron, CronExpression, Interval } from '@nestjs/schedule';
+import { Cron, CronExpression, Interval, Timeout } from '@nestjs/schedule';
 
 @Injectable()
 export class CronTaskService {
@@ -11,5 +11,10 @@ export class CronTaskService {
   @Interval(3 * 1000)
   handleInterval() {
     console.log('Interval task runs every 3 seconds...');
+  }
+
+  @Timeout(5 * 1000)
+  handleTimeout() {
+    console.log('Timeout every 5 seconds after start');
   }
 }
