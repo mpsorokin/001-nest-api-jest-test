@@ -7,6 +7,8 @@ import { ArtistModule } from './artist/artist.module';
 import { SpotifyModule } from './spotify/spotify.module';
 import { getSpotifyConfig } from './config/spotify.config';
 import { FileModule } from './file/file.module';
+import { ServeStaticModule } from '@nestjs/serve-static';
+import * as path from 'path';
 
 @Module({
   imports: [
@@ -19,6 +21,10 @@ import { FileModule } from './file/file.module';
       imports: [ConfigModule],
       useFactory: getSpotifyConfig,
       inject: [ConfigService],
+    }),
+    ServeStaticModule.forRoot({
+      rootPath: path.join(__dirname, '..', 'uploads'),
+      serveRoot: 'static',
     }),
     FileModule,
   ],
