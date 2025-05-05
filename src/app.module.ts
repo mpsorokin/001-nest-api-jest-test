@@ -6,6 +6,7 @@ import { PrismaModule } from './prisma/prisma.module';
 import { ArtistModule } from './artist/artist.module';
 import { SpotifyModule } from './spotify/spotify.module';
 import { getSpotifyConfig } from './config/spotify.config';
+import { FileModule } from './file/file.module';
 
 @Module({
   imports: [
@@ -19,6 +20,7 @@ import { getSpotifyConfig } from './config/spotify.config';
       useFactory: getSpotifyConfig,
       inject: [ConfigService],
     }),
+    FileModule,
   ],
   controllers: [AppController],
   providers: [AppService],
